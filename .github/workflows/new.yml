@@ -19,7 +19,6 @@ steps:
 uses: actions/github@v2
 with:
 go-version: ${{ matrix.run }}
-id: run
 - name: Setup
 uses: actions/checkout@v2
 - name: TestingMethode
