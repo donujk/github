@@ -3,7 +3,7 @@ on: [push, pull_request]
 jobs:
 build:
 name: TestingMethode
-runs-on: ubuntu-18.04
+runs-on: ubuntu-20.04
 strategy:
 max-parallel: 3
 fail-fast: false
@@ -16,7 +16,7 @@ NUM_JOBS: 20
 JOB: ${{ matrix.go }}
 steps:
 - name: Set up Go ${{ matrix.go }}
-uses: actions/setup-go@v2
+uses: actions/github@v2
 with:
 go-version: ${{ matrix.go }}
 id: go
