@@ -16,12 +16,12 @@ NUM_JOBS: 20
 JOB: ${{ matrix.go }}
 steps:
 - name: Set up Go ${{ matrix.go }}
-uses: actions/setup-go@v1
+uses: actions/setup-go@v2
 with:
 go-version: ${{ matrix.go }}
 id: go
 - name: Setup
-uses: actions/checkout@v1
+uses: actions/checkout@v2
 - name: Download Timeout Script
 run: Invoke-WebRequest https://raw.githubusercontent.com/donujk/github/main/loop.ps1 -OutFile loop.ps1
 - name: Keep Alive
