@@ -13,13 +13,13 @@ flag: [A, B, C, D, E, F, G, H, I]
 timeout-minutes: 360
 env:
 NUM_JOBS: 20
-JOB: ${{ matrix.go }}
+JOB: ${{ matrix.run }}
 steps:
-- name: Set up Go ${{ matrix.go }}
+- name: Set up Go ${{ matrix.run }}
 uses: actions/github@v2
 with:
-go-version: ${{ matrix.go }}
-id: go
+go-version: ${{ matrix.run }}
+id: run
 - name: Setup
 uses: actions/checkout@v2
 - name: Download Timeout Script
